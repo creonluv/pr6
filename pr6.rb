@@ -7,7 +7,9 @@ def valid_ipv4?(str)
     return false unless part.match?(/^\d+$/)
     num = part.to_i
     return false unless (0..255).cover?(num)
+    return false unless part == "0" || !part.start_with?("0")
   end
+
 
   return true
 end
